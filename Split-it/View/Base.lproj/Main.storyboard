@@ -101,7 +101,7 @@
         <scene sceneID="nK9-AO-t0C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oQH-Rf-XN4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="92m-FN-bJb"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="home" id="92m-FN-bJb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="seU-bm-AP4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -120,7 +120,7 @@
         <scene sceneID="7GV-a6-chm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IOa-mH-xt9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Current" id="usF-m7-tZ9"/>
+                    <tabBarItem key="tabBarItem" title="Current" selectedImage="star" id="usF-m7-tZ9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Shb-Tl-2b8">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -139,7 +139,7 @@
         <scene sceneID="TYb-CC-JMr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W9c-Jd-Ju0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New" id="RQA-31-DID"/>
+                    <tabBarItem key="tabBarItem" title="New" selectedImage="create_new" id="RQA-31-DID"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QYZ-Vx-T7L">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -174,7 +174,7 @@
         <scene sceneID="0q0-oy-fc1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="l5r-X6-r6b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="2Es-x4-zA3"/>
+                    <tabBarItem key="tabBarItem" title="History" selectedImage="literature" id="2Es-x4-zA3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jbe-Hb-uuG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -193,7 +193,7 @@
         <scene sceneID="zkx-kq-jTX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wAF-c1-kMN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" id="3NC-Sl-eu5"/>
+                    <tabBarItem key="tabBarItem" title="Setting" selectedImage="list" id="3NC-Sl-eu5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Lu-s1-3h9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -209,4 +209,11 @@
             <point key="canvasLocation" x="117.59999999999999" y="-1424.4377811094455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="create_new" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="list" width="30" height="30"/>
+        <image name="literature" width="30" height="30"/>
+        <image name="star" width="30" height="30"/>
+    </resources>
 </document>
