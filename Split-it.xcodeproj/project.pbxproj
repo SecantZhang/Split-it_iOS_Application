@@ -18,6 +18,9 @@
 		C8A3615920C9AE1300DE6604 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615820C9AE1300DE6604 /* NewViewController.swift */; };
 		C8A3615B20C9AE2200DE6604 /* HistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615A20C9AE2200DE6604 /* HistViewController.swift */; };
 		C8A3615D20C9AE2E00DE6604 /* SettViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */; };
+		C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */; };
+		C8A3616A20CA493100DE6604 /* JourneyPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */; };
+		C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		C8A3615820C9AE1300DE6604 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		C8A3615A20C9AE2200DE6604 /* HistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistViewController.swift; sourceTree = "<group>"; };
 		C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettViewController.swift; sourceTree = "<group>"; };
+		C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumOfPeopleViewController.swift; sourceTree = "<group>"; };
+		C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyPeopleViewController.swift; sourceTree = "<group>"; };
+		C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +108,14 @@
 		C8A3615E20C9B14900DE6604 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */,
 				C8A3615620C9AAEC00DE6604 /* CurrentViewController.swift */,
-				C8A3615820C9AE1300DE6604 /* NewViewController.swift */,
 				C8A3615A20C9AE2200DE6604 /* HistViewController.swift */,
+				C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */,
+				C8A3615820C9AE1300DE6604 /* NewViewController.swift */,
+				C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */,
 				C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */,
+				C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */,
+				C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,10 +230,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Split-it/Pods-Split-it-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PopupKit/PopupKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,10 +251,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8A3615720C9AAEC00DE6604 /* CurrentViewController.swift in Sources */,
+				C8A3616A20CA493100DE6604 /* JourneyPeopleViewController.swift in Sources */,
 				C8A3614A20C9A0FC00DE6604 /* Split_it.xcdatamodeld in Sources */,
 				C8A3615B20C9AE2200DE6604 /* HistViewController.swift in Sources */,
+				C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */,
 				C8A3615D20C9AE2E00DE6604 /* SettViewController.swift in Sources */,
 				C8A3615920C9AE1300DE6604 /* NewViewController.swift in Sources */,
+				C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */,
 				C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */,
 				C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */,
 			);

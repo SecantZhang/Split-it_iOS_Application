@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import PopupKit
 
 class NewViewController: UIViewController {
     
+    let popupKit = PopupView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        popupKit.show()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,5 +36,9 @@ class NewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func popupKitSetUp () {
+        
+    }
 
 }
