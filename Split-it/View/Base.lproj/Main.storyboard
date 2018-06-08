@@ -93,7 +93,7 @@ Before everything starts, we'd like to know how many people are with you in this
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="tQG-O0-xGR" eventType="touchUpInside" id="vQf-3U-KBr"/>
-                                            <segue destination="1jf-HF-deo" kind="show" id="lt2-En-jSY"/>
+                                            <segue destination="1jf-HF-deo" kind="show" identifier="SendData_PreparationToPeople" id="lt2-En-jSY"/>
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-PV-hYM">

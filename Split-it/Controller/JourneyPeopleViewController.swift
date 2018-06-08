@@ -10,15 +10,13 @@ import UIKit
 
 class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let numOfPeopleVC = NumOfPeopleViewController()
     let reuseIdentifier : String = "cell"
     var items : [String] = [String]()
     var peopleCount : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(peopleCount)
-        peopleCount = numOfPeopleVC.selection
+        print("People selection value: \(peopleCount)")
     }
 
     override func didReceiveMemoryWarning() {

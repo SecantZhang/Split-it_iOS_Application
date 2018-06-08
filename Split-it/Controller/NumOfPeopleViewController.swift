@@ -48,7 +48,8 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     // MARK: - method when next button is pressed
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        print(selection)
+        print("Preparation number: \(selection)")
+        performSegue(withIdentifier: "SendData_PreparationToPeople", sender: self)
     }
     
     func changeApperance () {
@@ -74,5 +75,12 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     // MARK: - Detecting the picker selection.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selection = row + 1
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SendData_PreparationToPeople" {
+            let peopleVC = segue.destination as! JourneyPeopleViewController
+            peopleVC.peopleCount = selection
+        }
     }
 }
