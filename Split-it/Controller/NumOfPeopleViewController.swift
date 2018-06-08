@@ -49,7 +49,7 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     // MARK: - method when next button is pressed
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         print("Preparation number: \(selection)")
-        performSegue(withIdentifier: "SendData_PreparationToPeople", sender: self)
+        //performSegue(withIdentifier: "SendData_PreparationToPeople", sender: self)
     }
     
     func changeApperance () {

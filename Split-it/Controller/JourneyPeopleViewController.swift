@@ -8,17 +8,19 @@
 
 import UIKit
 
-class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let reuseIdentifier : String = "cell"
     var items : [String] = [String]()
     var peopleCount : Int = 0
 
+    @IBOutlet weak var viewContainer: UIView!    
+    @IBOutlet weak var nextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("People selection value: \(peopleCount)")
         itemsArrayInitialization()
-        print(items)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,16 +28,15 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func itemsArrayInitialization () {
+        for index in 1...peopleCount {
+            items.append(String(index))
+        }
     }
-    */
+    
+    /*******************************************
+        Collection view manipulation
+     *******************************************/
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
@@ -44,7 +45,6 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PeopleCollectionViewCell
         
-        cell.backgroundColor = UIColor.cyan
         cell.myLabel.text = items[indexPath.item]
         
         return cell
@@ -54,10 +54,22 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
         print(indexPath.item)
     }
     
-    func itemsArrayInitialization () {
-        for index in 1...peopleCount {
-            items.append(String(index))
-        }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 70, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15.0
     }
 
 }

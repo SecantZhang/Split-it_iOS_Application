@@ -115,7 +115,6 @@
 				C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */,
 				C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */,
 				C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */,
-				C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +131,7 @@
 		C8A3616020C9B16400DE6604 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
