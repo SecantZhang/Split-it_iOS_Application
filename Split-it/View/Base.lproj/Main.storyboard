@@ -93,7 +93,7 @@ Before everything starts, we'd like to know how many people are with you in this
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="tQG-O0-xGR" eventType="touchUpInside" id="vQf-3U-KBr"/>
-                                            <segue destination="1jf-HF-deo" kind="show" identifier="SendData_PreparationToPeople" id="lt2-En-jSY"/>
+                                            <segue destination="1jf-HF-deo" kind="show" identifier="SendData_PreparationToPeople" id="bmc-0P-4l0"/>
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-PV-hYM">
@@ -158,6 +158,10 @@ Before everything starts, we'd like to know how many people are with you in this
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1jf-HF-deo" id="EXo-cY-0oO"/>
+                                    <outlet property="delegate" destination="1jf-HF-deo" id="v2T-Aq-QQ7"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
