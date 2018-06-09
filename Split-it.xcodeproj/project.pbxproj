@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C522D770235B33AE8A9D912 /* Pods_Split_it.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5176C6E64A65E996E4163F0 /* Pods_Split_it.framework */; };
+		C856C9AC20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856C9AB20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift */; };
 		C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3614120C9A0FC00DE6604 /* AppDelegate.swift */; };
 		C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */; };
 		C8A3614720C9A0FC00DE6604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3614520C9A0FC00DE6604 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		22313F1E2C8D378F9159F971 /* Pods-Split-it.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split-it.release.xcconfig"; path = "Pods/Target Support Files/Pods-Split-it/Pods-Split-it.release.xcconfig"; sourceTree = "<group>"; };
 		9EF636208F8CF76911FE6BF7 /* Pods-Split-it.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split-it.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Split-it/Pods-Split-it.debug.xcconfig"; sourceTree = "<group>"; };
 		A5176C6E64A65E996E4163F0 /* Pods_Split_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Split_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C856C9AB20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeoplePopupViewController.swift; sourceTree = "<group>"; };
 		C8A3613E20C9A0FC00DE6604 /* Split-it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split-it.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A3614120C9A0FC00DE6604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */,
 				C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */,
 				C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */,
+				C856C9AB20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */,
 				C8A3615D20C9AE2E00DE6604 /* SettViewController.swift in Sources */,
 				C8A3615920C9AE1300DE6604 /* NewViewController.swift in Sources */,
+				C856C9AC20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift in Sources */,
 				C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */,
 				C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */,
 				C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */,
