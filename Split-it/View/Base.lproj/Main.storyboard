@@ -155,11 +155,18 @@ Before everything starts, we'd like to know how many people are with you in this
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="0.63137254899999995" green="0.83921568629999999" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="biP-O4-iAA">
-                                                            <rect key="frame" x="14" y="74" width="42" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="biP-O4-iAA">
+                                                            <rect key="frame" x="17" y="74" width="38" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27j-U2-JrH">
+                                                            <rect key="frame" x="19" y="20" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -167,8 +174,9 @@ Before everything starts, we'd like to know how many people are with you in this
                                                 <size key="customSize" width="70" height="100"/>
                                                 <connections>
                                                     <outlet property="imageView" destination="Gib-0s-5zw" id="r9F-XT-sCh"/>
+                                                    <outlet property="initialNameLabel" destination="27j-U2-JrH" id="Z5d-h5-Cou"/>
                                                     <outlet property="myLabel" destination="biP-O4-iAA" id="joi-bL-V81"/>
-                                                    <segue destination="a3e-qD-Rhl" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="SD5-SK-IZ8"/>
+                                                    <segue destination="a3e-qD-Rhl" kind="presentation" identifier="PassingDataToPopup" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="SD5-SK-IZ8"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -203,6 +211,7 @@ Before everything starts, we'd like to know how many people are with you in this
                     </view>
                     <navigationItem key="navigationItem" title="People" id="QKb-sL-7Wp" customClass="Friends"/>
                     <connections>
+                        <outlet property="collectionView" destination="0ky-pe-RZp" id="tvg-wg-4id"/>
                         <outlet property="nextButton" destination="A2D-yr-gQ6" id="Dkm-zM-Hca"/>
                         <outlet property="viewContainer" destination="F8o-Aq-p2K" id="kdh-L4-GPm"/>
                     </connections>
@@ -238,7 +247,7 @@ Before everything starts, we'd like to know how many people are with you in this
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acL-sG-Mcn">
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name: " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acL-sG-Mcn">
                                         <rect key="frame" x="83" y="67" width="189" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
@@ -274,7 +283,7 @@ Before everything starts, we'd like to know how many people are with you in this
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-cE-tvT">
-                                        <rect key="frame" x="19" y="231" width="253" height="48"/>
+                                        <rect key="frame" x="165" y="231" width="107" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                         <state key="normal" title="Next">
@@ -282,6 +291,17 @@ Before everything starts, we'd like to know how many people are with you in this
                                         </state>
                                         <connections>
                                             <action selector="nextButtonPressed:" destination="a3e-qD-Rhl" eventType="touchUpInside" id="z3k-m5-x88"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6S-Xn-58U">
+                                        <rect key="frame" x="19" y="231" width="107" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeButtonPressed:" destination="a3e-qD-Rhl" eventType="touchUpInside" id="FtO-ht-5md"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -292,6 +312,9 @@ Before everything starts, we'd like to know how many people are with you in this
                         <viewLayoutGuide key="safeArea" id="NPL-OO-NeR"/>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="b6S-Xn-58U" id="4Ya-8c-kTm"/>
+                        <outlet property="headerLabel" destination="NGn-Ll-12a" id="YlO-0L-CYw"/>
+                        <outlet property="nameEnterTextfield" destination="acL-sG-Mcn" id="9Gu-f5-690"/>
                         <outlet property="nextButton" destination="L4B-cE-tvT" id="Xzy-Oh-KZm"/>
                     </connections>
                 </viewController>

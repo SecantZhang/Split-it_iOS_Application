@@ -12,6 +12,7 @@ class PeopleCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var initialNameLabel: UILabel!
     
     func castShadow() {
         myLabel.layer.shadowRadius = 10

@@ -20,7 +20,7 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeApperance()
+        // changeApperance()
         
         // Connect Data (Picker)
         self.numberPicker.delegate = self
