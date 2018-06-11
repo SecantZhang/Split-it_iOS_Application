@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol PopupPassingDataProtocol {
     func dataReceived(enteredName : String)
@@ -21,6 +22,7 @@ class AddPeoplePopupViewController: UIViewController {
     
     var dataSendDelegate : PopupPassingDataProtocol?
     var cellIdFromPeople : Int?
+    var name : [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
