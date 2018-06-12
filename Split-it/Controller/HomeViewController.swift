@@ -14,6 +14,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //MARK: - See if data was stored in coreData successfully.
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
 
     override func didReceiveMemoryWarning() {

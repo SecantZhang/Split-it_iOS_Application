@@ -102,7 +102,6 @@
 				C8A3615F20C9B15700DE6604 /* View */,
 				C8A3614B20C9A0FD00DE6604 /* Assets.xcassets */,
 				C8A3615020C9A0FD00DE6604 /* Info.plist */,
-				C8A3614820C9A0FC00DE6604 /* Split_it.xcdatamodeld */,
 			);
 			path = "Split-it";
 			sourceTree = "<group>";
@@ -135,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */,
+				C8A3614820C9A0FC00DE6604 /* Split_it.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";

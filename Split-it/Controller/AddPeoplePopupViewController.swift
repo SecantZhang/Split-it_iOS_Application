@@ -22,7 +22,8 @@ class AddPeoplePopupViewController: UIViewController {
     
     var dataSendDelegate : PopupPassingDataProtocol?
     var cellIdFromPeople : Int?
-    var name : [NSManagedObject] = []
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,9 @@ class AddPeoplePopupViewController: UIViewController {
     }
 
     @IBAction func nextButtonPressed(_ sender: Any) {
-        
+        if nameEnterTextfield.text != nil {
+            saveUserData()
+        }
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
@@ -42,5 +45,24 @@ class AddPeoplePopupViewController: UIViewController {
     // MARK: - Initialize UI: Apperance and Label change.
     func uiInitialization () {
         headerLabel.text = "Add User: \(cellIdFromPeople! + 1)"
+    }
+    
+    func saveUserData () {
+        
+        let newUser = User(context: context)
+        
+        newUser.name = nameEnterTextfield.text!
+        newUser.creatDate = getDate()
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context \(error)")
+        }
+    }
+    
+    func getDate () -> Date {
+        let date = Date()
+        return date
     }
 }

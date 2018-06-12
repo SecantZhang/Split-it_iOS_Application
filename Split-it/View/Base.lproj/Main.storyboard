@@ -286,7 +286,7 @@ Before everything starts, we'd like to know how many people are with you in this
                                         <rect key="frame" x="165" y="231" width="107" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                        <state key="normal" title="Next">
+                                        <state key="normal" title="Add">
                                             <color key="titleColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
