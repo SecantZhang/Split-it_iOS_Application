@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     // picker data array
     var pickerData : [String] = [String]()
@@ -17,6 +17,7 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var viewPiece: UIView!
     @IBOutlet weak var numberPicker: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var groupNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
         // Connect Data (Picker)
         self.numberPicker.delegate = self
         self.numberPicker.dataSource = self
+        self.groupNameTextField.delegate = self
         
         // Implement the data array for picker
         pickerData = ["1", "2", "3", "4", "5", "6", "7", "8"]
@@ -35,16 +37,11 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - method for dismissing the keyboard when user click the "return"
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
-    */
     
     // MARK: - method when next button is pressed
     @IBAction func nextButtonPressed(_ sender: UIButton) {
@@ -81,6 +78,7 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
         if segue.identifier == "SendData_PreparationToPeople" {
             let peopleVC = segue.destination as! JourneyPeopleViewController
             peopleVC.peopleCount = selection
+            peopleVC.groupName = groupNameTextField.text == nil ? "Journey" : groupNameTextField.text!
         }
     }
 }

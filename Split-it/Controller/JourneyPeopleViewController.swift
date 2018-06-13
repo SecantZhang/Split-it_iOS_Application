@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, PopupPassingDataProtocol {
     
@@ -15,25 +16,31 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
         name = enteredName
         initialName[clickedCellItem] = getFirstChar(str: name!)
         items[clickedCellItem] = enteredName
+        itemStatus[clickedCellItem] = true
         collectionView.reloadData()
     }
     
-    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let reuseIdentifier : String = "cell"
+    var groupName : String = ""
     var items : [String] = [String]()
+    var itemStatus : [Bool] = [Bool]()
     var initialName : [String] = [String]()
     var peopleCount : Int = 0
     var clickedCellItem : Int = -1
     var name : String?
 
-    @IBOutlet weak var viewContainer: UIView!    
+    @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var groupNameTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        groupNameTextView.text = groupName
         print("People selection value: \(peopleCount)")
         itemsArrayInitialization()
+        print(groupName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,12 +52,42 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
         for index in 1...peopleCount {
             items.append("User: \(index)")
             initialName.append("")
+            itemStatus.append(false)
         }
     }
     
     // MARK: - Get first char of String.
     func getFirstChar (str : String) -> String {
         return String(str.prefix(1)).uppercased()
+    }
+    
+    // passing data and delegated related
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PassingDataToPopup" {
+            let popupVC = segue.destination as! AddPeoplePopupViewController
+            popupVC.cellIdFromPeople = clickedCellItem
+            popupVC.dataSendDelegate = self
+        }
+    }
+    
+    // TODO: - Save Function.
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        // check if adding people process is completed.
+        var status = true
+        for index in 0...peopleCount-1 {
+            if itemStatus[index] == false {
+                status = false
+                break
+            }
+        }
+        if status == false {
+            let alert = UIAlertController(title: "Please Complete the Adding Process", message: "It is recommended to add all people before continue, ^_^", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            
+        }
     }
     
     /*******************************************
@@ -93,13 +130,4 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
         return 15.0
     }
     
-    // passing data and delegated related
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PassingDataToPopup" {
-            let popupVC = segue.destination as! AddPeoplePopupViewController
-            popupVC.cellIdFromPeople = clickedCellItem
-            popupVC.dataSendDelegate = self
-        }
-    }
-
 }
