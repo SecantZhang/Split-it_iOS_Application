@@ -44,7 +44,8 @@ class AddPeoplePopupViewController: UIViewController {
     
     // MARK: - Initialize UI: Apperance and Label change.
     func uiInitialization () {
-        headerLabel.text = "Add User: \(cellIdFromPeople! + 1)"
+        let displayCellIdFromPeople = cellIdFromPeople! + 1
+        headerLabel.text = "Add User: \(displayCellIdFromPeople)"
     }
     
     func saveUserData () {

@@ -22,6 +22,7 @@
 		C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */; };
 		C8A3616A20CA493100DE6604 /* JourneyPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */; };
 		C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */; };
+		C8FC6C1320D0A12F005D7FE6 /* HistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC6C1220D0A12F005D7FE6 /* HistTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumOfPeopleViewController.swift; sourceTree = "<group>"; };
 		C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyPeopleViewController.swift; sourceTree = "<group>"; };
 		C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8FC6C1220D0A12F005D7FE6 /* HistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */,
 				C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */,
 				C856C9AB20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift */,
+				C8FC6C1220D0A12F005D7FE6 /* HistTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				C8A3615D20C9AE2E00DE6604 /* SettViewController.swift in Sources */,
 				C8A3615920C9AE1300DE6604 /* NewViewController.swift in Sources */,
 				C856C9AC20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift in Sources */,
+				C8FC6C1320D0A12F005D7FE6 /* HistTableViewController.swift in Sources */,
 				C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */,
 				C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */,
 				C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */,
