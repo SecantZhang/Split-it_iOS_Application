@@ -32,13 +32,18 @@ class AddPeoplePopupViewController: UIViewController {
     }
 
     @IBAction func nextButtonPressed(_ sender: Any) {
+        dataSendDelegate?.dataReceived(enteredName: nameEnterTextfield.text!)
         if nameEnterTextfield.text != nil {
             saveUserData()
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Please Enter the Name", message: "It is recommended to enter the name  before continue, ^_^", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        dataSendDelegate?.dataReceived(enteredName: nameEnterTextfield.text!)
         self.dismiss(animated: true, completion: nil)
     }
     

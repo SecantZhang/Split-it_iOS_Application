@@ -16,12 +16,13 @@
 		C8A3614C20C9A0FD00DE6604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A3614B20C9A0FD00DE6604 /* Assets.xcassets */; };
 		C8A3614F20C9A0FD00DE6604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3614D20C9A0FD00DE6604 /* LaunchScreen.storyboard */; };
 		C8A3615720C9AAEC00DE6604 /* CurrentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615620C9AAEC00DE6604 /* CurrentViewController.swift */; };
-		C8A3615920C9AE1300DE6604 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615820C9AE1300DE6604 /* NewViewController.swift */; };
 		C8A3615B20C9AE2200DE6604 /* HistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615A20C9AE2200DE6604 /* HistViewController.swift */; };
 		C8A3615D20C9AE2E00DE6604 /* SettViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */; };
 		C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */; };
 		C8A3616A20CA493100DE6604 /* JourneyPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */; };
 		C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */; };
+		C8E3C52020D2152400AFA623 /* PurchaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3C51F20D2152400AFA623 /* PurchaseTableViewController.swift */; };
+		C8E3C52420D2312600AFA623 /* NewPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3C52320D2312600AFA623 /* NewPurchaseViewController.swift */; };
 		C8FC6C1320D0A12F005D7FE6 /* HistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC6C1220D0A12F005D7FE6 /* HistTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +40,13 @@
 		C8A3614E20C9A0FD00DE6604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8A3615020C9A0FD00DE6604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8A3615620C9AAEC00DE6604 /* CurrentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentViewController.swift; sourceTree = "<group>"; };
-		C8A3615820C9AE1300DE6604 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		C8A3615A20C9AE2200DE6604 /* HistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistViewController.swift; sourceTree = "<group>"; };
 		C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettViewController.swift; sourceTree = "<group>"; };
 		C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumOfPeopleViewController.swift; sourceTree = "<group>"; };
 		C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyPeopleViewController.swift; sourceTree = "<group>"; };
 		C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		C8E3C51F20D2152400AFA623 /* PurchaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewController.swift; sourceTree = "<group>"; };
+		C8E3C52320D2312600AFA623 /* NewPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPurchaseViewController.swift; sourceTree = "<group>"; };
 		C8FC6C1220D0A12F005D7FE6 /* HistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,15 +113,16 @@
 		C8A3615E20C9B14900DE6604 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C8E3C52320D2312600AFA623 /* NewPurchaseViewController.swift */,
 				C8A3615620C9AAEC00DE6604 /* CurrentViewController.swift */,
 				C8A3615A20C9AE2200DE6604 /* HistViewController.swift */,
 				C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */,
-				C8A3615820C9AE1300DE6604 /* NewViewController.swift */,
 				C8A3616720CA2D9D00DE6604 /* NumOfPeopleViewController.swift */,
 				C8A3615C20C9AE2E00DE6604 /* SettViewController.swift */,
 				C8A3616920CA493100DE6604 /* JourneyPeopleViewController.swift */,
 				C856C9AB20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift */,
 				C8FC6C1220D0A12F005D7FE6 /* HistTableViewController.swift */,
+				C8E3C51F20D2152400AFA623 /* PurchaseTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,16 +259,17 @@
 			files = (
 				C8A3615720C9AAEC00DE6604 /* CurrentViewController.swift in Sources */,
 				C8A3616A20CA493100DE6604 /* JourneyPeopleViewController.swift in Sources */,
+				C8E3C52020D2152400AFA623 /* PurchaseTableViewController.swift in Sources */,
 				C8A3614A20C9A0FC00DE6604 /* Split_it.xcdatamodeld in Sources */,
 				C8A3615B20C9AE2200DE6604 /* HistViewController.swift in Sources */,
 				C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */,
 				C8A3615D20C9AE2E00DE6604 /* SettViewController.swift in Sources */,
-				C8A3615920C9AE1300DE6604 /* NewViewController.swift in Sources */,
 				C856C9AC20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift in Sources */,
 				C8FC6C1320D0A12F005D7FE6 /* HistTableViewController.swift in Sources */,
 				C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */,
 				C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */,
 				C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */,
+				C8E3C52420D2312600AFA623 /* NewPurchaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
