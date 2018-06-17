@@ -43,13 +43,19 @@ class NewPurchaseViewController: UIViewController {
         else {
             
         }
+        
+        print(checkCompletionStatus())
     }
     
     func checkCompletionStatus () -> Bool {
         var status : Bool = true
-        if amountPaidTextField.text == nil || titleTextField == nil {
+        if amountPaidTextField.text! == "" || titleTextField.text! == "" {
             status = false
         }
+        
+        // test
+        print(amountPaidTextField)
+        print(titleTextField)
         
         return status
     }

@@ -12,7 +12,7 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
 
     // picker data array
     var pickerData : [String] = [String]()
-    var selection : Int = 0
+    var selection : Int = 1
     
     @IBOutlet weak var viewPiece: UIView!
     @IBOutlet weak var numberPicker: UIPickerView!
