@@ -29,6 +29,7 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
     var peopleCount : Int = 0
     var clickedCellItem : Int = -1
     var name : String?
+    var currentGroup : Group?
 
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var nextButton: UIButton!
@@ -67,6 +68,7 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
             let popupVC = segue.destination as! AddPeoplePopupViewController
             popupVC.cellIdFromPeople = clickedCellItem
             popupVC.dataSendDelegate = self
+            popupVC.currentGroup = self.currentGroup
         }
     }
     

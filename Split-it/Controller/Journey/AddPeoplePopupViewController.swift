@@ -22,6 +22,7 @@ class AddPeoplePopupViewController: UIViewController {
     
     var dataSendDelegate : PopupPassingDataProtocol?
     var cellIdFromPeople : Int?
+    var currentGroup : Group?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -59,6 +60,7 @@ class AddPeoplePopupViewController: UIViewController {
         
         newUser.name = nameEnterTextfield.text!
         newUser.creatDate = getDate()
+        newUser.userParentGroup = self.currentGroup
         
         do {
             try context.save()

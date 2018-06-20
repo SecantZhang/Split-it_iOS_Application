@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     // picker data array
     var pickerData : [String] = [String]()
     var selection : Int = 1
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var group = [Group]()
+    var currentGroup : Group?
     
     @IBOutlet weak var viewPiece: UIView!
     @IBOutlet weak var numberPicker: UIPickerView!
@@ -45,8 +49,29 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     // MARK: - method when next button is pressed
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        saveGroupData()
         print("Preparation number: \(selection)")
         //performSegue(withIdentifier: "SendData_PreparationToPeople", sender: self)
+    }
+    
+    func saveGroupData () {
+        let enteredGroupName = groupNameTextField.text!
+        let numberOfPeople = selection
+        
+        let newGroup = Group(context: context)
+        newGroup.groupNumOfPeop = Int64(numberOfPeople)
+        newGroup.groupName = enteredGroupName
+        newGroup.onGoing = true
+        newGroup.groupCreatDate = Date()
+        
+        self.group.append(newGroup)
+        currentGroup = newGroup
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error in saving group \(error)")
+        }
     }
     
     func changeApperance () {
@@ -79,6 +104,7 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let peopleVC = segue.destination as! JourneyPeopleViewController
             peopleVC.peopleCount = selection
             peopleVC.groupName = groupNameTextField.text == nil ? "Journey" : groupNameTextField.text!
+            peopleVC.currentGroup = self.currentGroup
         }
     }
 }
