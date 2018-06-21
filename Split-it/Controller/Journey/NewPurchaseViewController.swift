@@ -26,7 +26,6 @@ class NewPurchaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.contentSize = CGSize(width: 375, height: 785)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +42,6 @@ class NewPurchaseViewController: UIViewController {
         else {
             
         }
-        
-        print(checkCompletionStatus())
     }
     
     func checkCompletionStatus () -> Bool {

@@ -69,7 +69,7 @@ class JourneyTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "JourneyDetailSegue" {
-            let destinationVC = segue.destination as! DetailTableViewController
+            let destinationVC = segue.destination as! DetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 destinationVC.selectedGroup = groups[indexPath.row]
                 destinationVC.groupName = groups[indexPath.row].groupName!

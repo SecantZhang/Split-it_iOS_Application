@@ -57,7 +57,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="bEO-jP-qPt" kind="show" identifier="" id="f55-D5-HP5"/>
                         <segue destination="ut8-8Q-Svx" kind="show" identifier="JourneyDetailSegue" id="BqT-e7-sYq"/>
                     </connections>
                 </tableViewController>
@@ -147,7 +146,7 @@ Before everything starts, we'd like to know about the name as well as how many p
             <objects>
                 <tableViewController id="bEO-jP-qPt" customClass="DetailTableViewController" customModule="Split_it" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y1d-eV-OXU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -403,7 +402,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWw-ru-2uo">
                                 <rect key="frame" x="16" y="56" width="343" height="446"/>
                                 <connections>
-                                    <segue destination="jmn-pa-8hs" kind="embed" id="uwe-K2-9TR"/>
+                                    <segue destination="jmn-pa-8hs" kind="embed" identifier="DetailUserSegue" id="uwe-K2-9TR"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zO5-Vd-eUi">
@@ -482,11 +481,11 @@ Before everything starts, we'd like to know about the name as well as how many p
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="ILB-un-RkF" customClass="NewPurchaseViewController" customModule="Split_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y9g-eF-c6U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="884"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-h4-u5j">
-                                <rect key="frame" x="0.0" y="116" width="375" height="835"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="791"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLm-h5-Nab">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="835"/>
@@ -533,7 +532,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6JC-tl-lic">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6JC-tl-lic">
                                                 <rect key="frame" x="15" y="160" width="340" height="151"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="151" id="PcG-6x-8qe"/>
@@ -909,6 +908,16 @@ Before everything starts, we'd like to know about the name as well as how many p
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aqt-ds-GO7">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailCell" id="MMJ-qP-V5p">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MMJ-qP-V5p" id="lHO-cA-DLe">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -919,6 +928,9 @@ Before everything starts, we'd like to know about the name as well as how many p
                             <constraint firstAttribute="trailing" secondItem="aqt-ds-GO7" secondAttribute="trailing" id="uS5-YI-oU9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="UserTableView" destination="aqt-ds-GO7" id="Zxm-EB-FPe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XkN-cb-gQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -932,6 +944,6 @@ Before everything starts, we'd like to know about the name as well as how many p
         <image name="star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vsb-Ez-e8v"/>
+        <segue reference="YQV-Le-oSC"/>
     </inferredMetricsTieBreakers>
 </document>

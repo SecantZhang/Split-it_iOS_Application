@@ -42,4 +42,11 @@ class DetailViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailUserSegue" {
+            let destinationVC = segue.destination as! DetailUserViewController
+            destinationVC.selectedGroup = self.selectedGroup
+        }
+    }
+    
 }
