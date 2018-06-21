@@ -15,15 +15,17 @@
         <attribute name="purchaseDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="purchaseParentGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="group_purchase" inverseEntity="Group" syncable="YES"/>
+        <relationship name="purchaseUser" optional="YES" toMany="YES" maxCount="8" deletionRule="Nullify" destinationEntity="User" inverseName="userPurchase" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
         <attribute name="creatDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="userParentGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="group_user" inverseEntity="Group" syncable="YES"/>
+        <relationship name="userPurchase" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Purchase" inverseName="purchaseUser" inverseEntity="Purchase" syncable="YES"/>
     </entity>
     <elements>
         <element name="Group" positionX="-54" positionY="9" width="128" height="133"/>
-        <element name="Purchase" positionX="421" positionY="-0" width="128" height="133"/>
-        <element name="User" positionX="187" positionY="-81" width="128" height="88"/>
+        <element name="Purchase" positionX="421" positionY="-0" width="128" height="150"/>
+        <element name="User" positionX="187" positionY="-81" width="128" height="105"/>
     </elements>
 </model>

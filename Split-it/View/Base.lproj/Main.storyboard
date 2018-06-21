@@ -248,9 +248,8 @@ Before everything starts, we'd like to know about the name as well as how many p
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="nextButtonPressed:" destination="1jf-HF-deo" eventType="touchUpInside" id="4QQ-kG-jSQ"/>
-                                            <action selector="nextButtonPressed:" destination="tQG-O0-xGR" eventType="touchUpInside" id="Jln-zh-729"/>
-                                            <segue destination="nNc-sg-jtU" kind="show" id="qdj-90-aOL"/>
+                                            <action selector="nextButtonPressed:" destination="1jf-HF-deo" eventType="touchUpInside" id="XMA-p0-Nf5"/>
+                                            <segue destination="ut8-8Q-Svx" kind="show" identifier="PeopleToDetailSegue" id="odn-c5-HjG"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="YOYOYOYOY" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxe-SE-9Ct">
@@ -271,7 +270,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                     <connections>
                         <outlet property="collectionView" destination="0ky-pe-RZp" id="tvg-wg-4id"/>
                         <outlet property="groupNameTextView" destination="Zxe-SE-9Ct" id="yvQ-Pc-G9y"/>
-                        <outlet property="nextButton" destination="A2D-yr-gQ6" id="Dkm-zM-Hca"/>
+                        <outlet property="nextButton" destination="A2D-yr-gQ6" id="ySi-Zs-pdY"/>
                         <outlet property="viewContainer" destination="F8o-Aq-p2K" id="kdh-L4-GPm"/>
                     </connections>
                 </viewController>
@@ -381,7 +380,7 @@ Before everything starts, we'd like to know about the name as well as how many p
             </objects>
             <point key="canvasLocation" x="3582" y="1094"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="HLx-rT-Djb">
             <objects>
                 <viewController id="ut8-8Q-Svx" customClass="DetailViewController" customModule="Split_it" customModuleProvider="target" sceneMemberID="viewController">
@@ -408,7 +407,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zO5-Vd-eUi">
                                 <rect key="frame" x="16" y="56" width="343" height="446"/>
                                 <connections>
-                                    <segue destination="gpS-Te-b8M" kind="embed" id="GwT-2S-xW4"/>
+                                    <segue destination="gpS-Te-b8M" kind="embed" identifier="DetailPurchaseSegue" id="GwT-2S-xW4"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -428,53 +427,26 @@ Before everything starts, we'd like to know about the name as well as how many p
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WNO-L7-LUB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="9ey-m6-mh8">
+                        <barButtonItem key="rightBarButtonItem" title="New Purchase" id="85A-Ys-cww">
+                            <connections>
+                                <action selector="NewButtonPressed:" destination="ut8-8Q-Svx" id="0Ac-uK-Jd6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="Navigation" destination="9ey-m6-mh8" id="86h-zL-0Go"/>
+                        <outlet property="NewButton" destination="85A-Ys-cww" id="oSJ-bW-5Mj"/>
                         <outlet property="PurchaseViewContainer" destination="zO5-Vd-eUi" id="GjF-o2-G33"/>
                         <outlet property="UserViewContainer" destination="KWw-ru-2uo" id="60k-UH-4Ul"/>
                         <outlet property="chosePurchaseUser" destination="oEP-Yp-zUv" id="5mK-GS-sJb"/>
+                        <segue destination="ILB-un-RkF" kind="show" identifier="NewPurchaseSegue" id="qtx-KD-EYj"/>
+                        <segue destination="a3e-qD-Rhl" kind="presentation" identifier="NewUserPopupSegue" id="t2v-qU-W8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waQ-ls-mYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3581.5999999999999" y="116.49175412293854"/>
-        </scene>
-        <!--Purchase List-->
-        <scene sceneID="dTn-MR-u47">
-            <objects>
-                <tableViewController id="nNc-sg-jtU" customClass="PurchaseTableViewController" customModule="Split_it" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zqc-7m-rFW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseCell" id="QGM-vJ-SSi">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QGM-vJ-SSi" id="aGx-Uf-RTr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="nNc-sg-jtU" id="hSN-KQ-1yI"/>
-                            <outlet property="delegate" destination="nNc-sg-jtU" id="0O2-JL-bGo"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Purchase List" id="Tjy-zc-SAb">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="yVy-PI-gBF">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="nNc-sg-jtU" id="Rfd-OH-BB4"/>
-                                <segue destination="ILB-un-RkF" kind="show" id="YQV-Le-oSC"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="unl-bc-PKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4404" y="1093"/>
         </scene>
         <!--New Purchase-->
         <scene sceneID="eOI-ir-ZXX">
@@ -485,7 +457,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-h4-u5j">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="791"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="835"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLm-h5-Nab">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="835"/>
@@ -498,7 +470,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-7L-AEW">
                                                 <rect key="frame" x="15" y="46" width="120" height="30"/>
@@ -542,7 +514,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                                                     <!--2018-06-14 05:04:52 +0000-->
                                                 </date>
                                             </datePicker>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="Test: 123456789" translatesAutoresizingMaskIntoConstraints="NO" id="U08-35-PKP">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="U08-35-PKP">
                                                 <rect key="frame" x="15" y="357" width="340" height="77"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -697,7 +669,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmX-2r-zLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5425" y="1244"/>
+            <point key="canvasLocation" x="4505" y="1242"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Bqd-iy-ItB">
@@ -736,9 +708,6 @@ Before everything starts, we'd like to know about the name as well as how many p
                                 <state key="normal" title="User History">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ILB-un-RkF" kind="show" id="vsb-Ez-e8v"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -882,6 +851,16 @@ Before everything starts, we'd like to know about the name as well as how many p
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kqh-LM-dGL">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseDetailCell" id="V4o-hG-gi8">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V4o-hG-gi8" id="jGp-P0-j0G">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -891,11 +870,15 @@ Before everything starts, we'd like to know about the name as well as how many p
                             <constraint firstItem="kqh-LM-dGL" firstAttribute="top" secondItem="X77-np-KHA" secondAttribute="top" id="keF-zU-lWg"/>
                             <constraint firstAttribute="trailing" secondItem="kqh-LM-dGL" secondAttribute="trailing" id="lNy-ER-Qdt"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="unN-C7-mHB"/>
                     </view>
+                    <connections>
+                        <outlet property="PurchaseTableView" destination="kqh-LM-dGL" id="EMv-RQ-MVU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh2-78-K6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4504.8000000000002" y="-76.46176911544228"/>
+            <point key="canvasLocation" x="4505" y="-72"/>
         </scene>
         <!--Detail User View Controller-->
         <scene sceneID="TKG-j4-nzz">
@@ -909,7 +892,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailCell" id="MMJ-qP-V5p">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailCell" id="MMJ-qP-V5p">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MMJ-qP-V5p" id="lHO-cA-DLe">
@@ -927,6 +910,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                             <constraint firstItem="aqt-ds-GO7" firstAttribute="leading" secondItem="qci-gG-qTs" secondAttribute="leading" id="REx-dQ-7Ga"/>
                             <constraint firstAttribute="trailing" secondItem="aqt-ds-GO7" secondAttribute="trailing" id="uS5-YI-oU9"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fzl-hX-Lvc"/>
                     </view>
                     <connections>
                         <outlet property="UserTableView" destination="aqt-ds-GO7" id="Zxm-EB-FPe"/>
@@ -944,6 +928,7 @@ Before everything starts, we'd like to know about the name as well as how many p
         <image name="star" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YQV-Le-oSC"/>
+        <segue reference="odn-c5-HjG"/>
+        <segue reference="SD5-SK-IZ8"/>
     </inferredMetricsTieBreakers>
 </document>

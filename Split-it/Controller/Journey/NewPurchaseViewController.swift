@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import SVProgressHUD
 
-class NewPurchaseViewController: UIViewController {
+class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var amountPaidTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
@@ -21,27 +22,45 @@ class NewPurchaseViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
+    var selectedGroup : Group?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.contentSize = CGSize(width: 375, height: 785)
+        amountPaidTextField.delegate = self
+        titleTextField.delegate = self
+        descriptionTextView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func completeButtonPressed(_ sender: Any) {
+        SVProgressHUD.show()
         if checkCompletionStatus() == false {
             let alert = UIAlertController(title: "Please Enter the Name", message: "It is recommended to enter the amount and title before complete, ^_^", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
         else {
-            
+            saveData()
+            SVProgressHUD.dismiss()
+            self.navigationController?.popViewController(animated: true)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
     func checkCompletionStatus () -> Bool {
@@ -49,11 +68,6 @@ class NewPurchaseViewController: UIViewController {
         if amountPaidTextField.text! == "" || titleTextField.text! == "" {
             status = false
         }
-        
-        // test
-        print(amountPaidTextField)
-        print(titleTextField)
-        
         return status
     }
     
@@ -66,6 +80,7 @@ class NewPurchaseViewController: UIViewController {
             newPurchase.purchaseDescription = descriptionTextView.text!
         }
         newPurchase.purchaseDate = datePicker.date
+        newPurchase.purchaseParentGroup = self.selectedGroup
         
         do {
             try context.save()

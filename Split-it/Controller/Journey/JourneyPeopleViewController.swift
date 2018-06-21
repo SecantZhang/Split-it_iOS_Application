@@ -66,9 +66,13 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PassingDataToPopup" {
             let popupVC = segue.destination as! AddPeoplePopupViewController
-            popupVC.cellIdFromPeople = clickedCellItem
             popupVC.dataSendDelegate = self
             popupVC.currentGroup = self.currentGroup
+        }
+        else if segue.identifier == "PeopleToDetailSegue" {
+            let destinationVC = segue.destination as! DetailViewController
+            destinationVC.selectedGroup = self.currentGroup
+            destinationVC.groupName = self.currentGroup?.groupName
         }
     }
     

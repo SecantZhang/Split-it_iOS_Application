@@ -23,6 +23,11 @@ class DetailUserViewController: UIViewController, UITableViewDelegate, UITableVi
         UserTableView.delegate = self
         UserTableView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadUserData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

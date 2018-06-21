@@ -21,7 +21,6 @@ class AddPeoplePopupViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     
     var dataSendDelegate : PopupPassingDataProtocol?
-    var cellIdFromPeople : Int?
     var currentGroup : Group?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -50,8 +49,7 @@ class AddPeoplePopupViewController: UIViewController {
     
     // MARK: - Initialize UI: Apperance and Label change.
     func uiInitialization () {
-        let displayCellIdFromPeople = cellIdFromPeople! + 1
-        headerLabel.text = "Add User: \(displayCellIdFromPeople)"
+        headerLabel.text = "Add People"
     }
     
     func saveUserData () {
