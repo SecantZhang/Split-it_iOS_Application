@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -536,11 +537,11 @@ Before everything starts, we'd like to know about the name as well as how many p
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rjg-ru-z4q">
-                                                <rect key="frame" x="15" y="480" width="340" height="95"/>
+                                                <rect key="frame" x="15" y="480" width="340" height="160"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="340" id="Geq-Q6-NBe"/>
-                                                    <constraint firstAttribute="height" constant="95" id="Gt0-Gh-3bW"/>
+                                                    <constraint firstAttribute="height" constant="160" id="Gt0-Gh-3bW"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lcp-cG-ikZ">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -549,13 +550,68 @@ Before everything starts, we'd like to know about the name as well as how many p
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fle-fW-7jQ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewPurchaseGroupUserCell" id="fle-fW-7jQ" customClass="NewPurchaseCollectionViewCell" customModule="Split_it" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="66"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="46" height="66"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sX-Bq-br3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSs-9e-NPy">
+                                                                    <rect key="frame" x="0.0" y="44" width="46" height="22"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBd-Ji-0dJ">
+                                                                    <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EA5-s3-e84">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                                                </imageView>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="wzG-t1-gUh">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </imageView>
+                                                            </subviews>
                                                         </view>
+                                                        <constraints>
+                                                            <constraint firstItem="EA5-s3-e84" firstAttribute="leading" secondItem="fle-fW-7jQ" secondAttribute="leading" id="19I-AU-R1i"/>
+                                                            <constraint firstItem="EA5-s3-e84" firstAttribute="top" secondItem="fle-fW-7jQ" secondAttribute="top" id="1Jl-9X-BPZ"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zBd-Ji-0dJ" secondAttribute="trailing" constant="8" id="4UE-WG-f6l"/>
+                                                            <constraint firstItem="5sX-Bq-br3" firstAttribute="leading" secondItem="fle-fW-7jQ" secondAttribute="leading" id="77i-TH-Be8"/>
+                                                            <constraint firstItem="wzG-t1-gUh" firstAttribute="top" secondItem="fle-fW-7jQ" secondAttribute="top" id="8i7-fk-mI4"/>
+                                                            <constraint firstAttribute="bottom" secondItem="5sX-Bq-br3" secondAttribute="bottom" constant="20" id="8rO-ES-e01"/>
+                                                            <constraint firstItem="zBd-Ji-0dJ" firstAttribute="top" secondItem="fle-fW-7jQ" secondAttribute="top" constant="8" id="BGH-IU-YMb"/>
+                                                            <constraint firstItem="wzG-t1-gUh" firstAttribute="leading" secondItem="fle-fW-7jQ" secondAttribute="leading" id="BcQ-yB-7sk"/>
+                                                            <constraint firstAttribute="trailing" secondItem="EA5-s3-e84" secondAttribute="trailing" id="Hbf-xp-Oyf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="5sX-Bq-br3" secondAttribute="trailing" id="M2w-Gn-8Us"/>
+                                                            <constraint firstItem="QSs-9e-NPy" firstAttribute="leading" secondItem="fle-fW-7jQ" secondAttribute="leading" id="PUA-QP-alX"/>
+                                                            <constraint firstItem="5sX-Bq-br3" firstAttribute="top" secondItem="fle-fW-7jQ" secondAttribute="top" id="RpI-6E-Lks"/>
+                                                            <constraint firstItem="zBd-Ji-0dJ" firstAttribute="leading" secondItem="fle-fW-7jQ" secondAttribute="leading" constant="8" id="asL-5N-NsR"/>
+                                                            <constraint firstAttribute="bottom" secondItem="wzG-t1-gUh" secondAttribute="bottom" constant="20" id="dDp-cD-jTX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="wzG-t1-gUh" secondAttribute="trailing" id="dWa-Lg-Kvq"/>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="zBd-Ji-0dJ" secondAttribute="bottom" constant="20" id="eew-8D-qku"/>
+                                                            <constraint firstItem="QSs-9e-NPy" firstAttribute="top" secondItem="fle-fW-7jQ" secondAttribute="top" constant="44" id="l3q-pD-nBo"/>
+                                                            <constraint firstAttribute="bottom" secondItem="QSs-9e-NPy" secondAttribute="bottom" id="qWa-yk-8Dz"/>
+                                                            <constraint firstAttribute="bottom" secondItem="EA5-s3-e84" secondAttribute="bottom" constant="20" id="sCs-p1-XVf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="QSs-9e-NPy" secondAttribute="trailing" id="yeK-jk-hOu"/>
+                                                        </constraints>
+                                                        <size key="customSize" width="46" height="66"/>
+                                                        <connections>
+                                                            <outlet property="ImageView" destination="5sX-Bq-br3" id="f3b-ye-Suf"/>
+                                                            <outlet property="NameLabel" destination="QSs-9e-NPy" id="aPI-1t-42c"/>
+                                                            <outlet property="initialNameLabel" destination="zBd-Ji-0dJ" id="Pgk-44-K6o"/>
+                                                            <outlet property="selectedIconImageView" destination="wzG-t1-gUh" id="jKp-qt-Fng"/>
+                                                            <outlet property="shadowImageView" destination="EA5-s3-e84" id="x1d-JV-WZa"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -571,7 +627,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9z-D1-Wbd">
-                                                <rect key="frame" x="15" y="583" width="160" height="60"/>
+                                                <rect key="frame" x="15" y="648" width="160" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="TOF-ZJ-7nV"/>
                                                     <constraint firstAttribute="width" constant="160" id="f2c-Dw-ArU"/>
@@ -585,7 +641,7 @@ Before everything starts, we'd like to know about the name as well as how many p
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-hT-2WT">
-                                                <rect key="frame" x="200" y="583" width="160" height="60"/>
+                                                <rect key="frame" x="200" y="648" width="160" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="ZmA-22-zgT"/>
                                                     <constraint firstAttribute="width" constant="160" id="tzx-qw-zf3"/>
@@ -664,12 +720,13 @@ Before everything starts, we'd like to know about the name as well as how many p
                         <outlet property="datePicker" destination="6JC-tl-lic" id="yE7-EV-GYs"/>
                         <outlet property="descriptionTextView" destination="U08-35-PKP" id="IRS-Gr-XTd"/>
                         <outlet property="scrollView" destination="vsV-h4-u5j" id="Mce-8d-blL"/>
+                        <outlet property="sharedWithCollectionView" destination="Rjg-ru-z4q" id="4fd-Qx-HCm"/>
                         <outlet property="titleTextField" destination="VI8-Qf-dC3" id="X2W-Ic-ePZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FmX-2r-zLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4505" y="1242"/>
+            <point key="canvasLocation" x="4504.8000000000002" y="1241.3793103448277"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Bqd-iy-ItB">
@@ -852,11 +909,11 @@ Before everything starts, we'd like to know about the name as well as how many p
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="446"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseDetailCell" id="V4o-hG-gi8">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PurchaseDetailCell" rowHeight="60" id="V4o-hG-gi8" customClass="DetailPurchaseTableViewCell" customModule="Split_it" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V4o-hG-gi8" id="jGp-P0-j0G">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -922,6 +979,7 @@ Before everything starts, we'd like to know about the name as well as how many p
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark" width="50" height="50"/>
         <image name="home" width="30" height="30"/>
         <image name="list" width="30" height="30"/>
         <image name="literature" width="30" height="30"/>

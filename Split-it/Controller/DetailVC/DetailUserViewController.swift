@@ -22,6 +22,7 @@ class DetailUserViewController: UIViewController, UITableViewDelegate, UITableVi
         loadUserData()
         UserTableView.delegate = self
         UserTableView.dataSource = self
+        UserTableView.register(UINib(nibName: "UserCustomTableViewCell", bundle: nil), forCellReuseIdentifier: "UserCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,13 +48,18 @@ class DetailUserViewController: UIViewController, UITableViewDelegate, UITableVi
         UserTableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
+    
     func tableView(_ tableView : UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserDetailCell", for: indexPath)
-        cell.textLabel?.text = self.users[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCustomTableViewCell
+        cell.UserNameLabel.text = self.users[indexPath.row].name?.uppercased()
+        
         return cell
     }
     

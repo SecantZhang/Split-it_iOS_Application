@@ -20,12 +20,13 @@
     <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
         <attribute name="creatDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="userAmountSpend" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="userParentGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="group_user" inverseEntity="Group" syncable="YES"/>
         <relationship name="userPurchase" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Purchase" inverseName="purchaseUser" inverseEntity="Purchase" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Group" positionX="-54" positionY="9" width="128" height="133"/>
+        <element name="Group" positionX="-54" positionY="9" width="128" height="135"/>
         <element name="Purchase" positionX="421" positionY="-0" width="128" height="150"/>
-        <element name="User" positionX="187" positionY="-81" width="128" height="105"/>
+        <element name="User" positionX="187" positionY="-81" width="128" height="120"/>
     </elements>
 </model>

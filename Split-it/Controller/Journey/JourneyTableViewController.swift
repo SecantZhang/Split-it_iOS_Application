@@ -19,6 +19,7 @@ class JourneyTableViewController: UITableViewController {
         super.viewDidLoad()
         loadGroupData()
         tableView.reloadData()
+        tableView.register(UINib(nibName: "JourneyCustomTableViewCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +40,10 @@ class JourneyTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -46,8 +51,8 @@ class JourneyTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath)
-        cell.textLabel?.text = self.groups[indexPath.row].groupName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! JourneyCustomTableViewCell
+        cell.JourneyTitleLabel.text = self.groups[indexPath.row].groupName
         return cell
     }
     

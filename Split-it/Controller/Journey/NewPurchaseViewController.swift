@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 import SVProgressHUD
 
-class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
 
     @IBOutlet weak var amountPaidTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
@@ -19,10 +20,14 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var addNewButton: UIButton!
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var sharedWithCollectionView: UICollectionView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var selectedGroup : Group?
+    var groupUsers = [User]()
+    var sharedUserSelection : Int = -1
+    var cellInitializationStatus : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,10 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
         amountPaidTextField.delegate = self
         titleTextField.delegate = self
         descriptionTextView.delegate = self
+        sharedWithCollectionView.delegate = self
+        sharedWithCollectionView.dataSource = self
+        loadUserData()
+        sharedWithCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +97,61 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
             print("Error saving context in New Purchase: \(error)")
         }
     }
+    
+    // MARK: - Fetch Users for collectionview.
+    func loadUserData (with request : NSFetchRequest<User> = User.fetchRequest()) {
+        let predicate = NSPredicate(format: "userParentGroup.groupName MATCHES %@", selectedGroup!.groupName!)
+        request.predicate = predicate
+        
+        do {
+            groupUsers = try context.fetch(request)
+        } catch {
+            print("Error in fetching user data in purchase detail: \(error)")
+        }
+    }
+    
+    // MARK: - UICollectionView Protocol methods.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return groupUsers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewPurchaseGroupUserCell", for: indexPath) as! NewPurchaseCollectionViewCell
+        cell.NameLabel.text = groupUsers[indexPath.item].name
+        cell.initialNameLabel.text = String((groupUsers[indexPath.item].name?.prefix(1))!.uppercased())
+        return cell
+    }
+    
+    // MARK: - UICollectionView Apperance Method
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 46, height: 66)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8.0
+    }
+    
+    // MARK: - User clicked the collectionview method.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("CollectionView Clicked at: \(indexPath.item)")
+        // test
+        sharedUserSelection = indexPath.item
+        
+        let currentCell = collectionView.cellForItem(at: indexPath) as! NewPurchaseCollectionViewCell
+        if currentCell.selectedIconImageView.isHidden == true {
+            currentCell.selectedIconImageView.isHidden = false
+            currentCell.isSelected = true
+        }
+        else {
+            currentCell.selectedIconImageView.isHidden = true
+            currentCell.isSelected = false
+        }
+    }
+    
     
 
 }

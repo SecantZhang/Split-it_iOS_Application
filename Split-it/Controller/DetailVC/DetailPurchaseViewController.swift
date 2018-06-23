@@ -22,6 +22,8 @@ class DetailPurchaseViewController: UIViewController, UITableViewDelegate, UITab
         loadPurchaseData()
         PurchaseTableView.delegate = self
         PurchaseTableView.dataSource = self
+        PurchaseTableView.register(UINib(nibName: "DetailPurchaseTableViewCell", bundle: nil), forCellReuseIdentifier: "PurchaseCell")
+        PurchaseTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,15 +48,31 @@ class DetailPurchaseViewController: UIViewController, UITableViewDelegate, UITab
         PurchaseTableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return purchaseAry.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PurchaseDetailCell", for: indexPath)
-        cell.textLabel?.text = self.purchaseAry[indexPath.row].title
-        cell.detailTextLabel?.text = String(self.purchaseAry[indexPath.row].amount)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PurchaseCell", for: indexPath) as! DetailPurchaseTableViewCell
+        cell.cellTitle.text = self.purchaseAry[indexPath.row].title
+        cell.amountTextField.text = String(self.purchaseAry[indexPath.row].amount)
+        cell.dateTextField.text = DateFormat(date: self.purchaseAry[indexPath.row].purchaseDate!)
+        cell.descriptionLabel.text = self.purchaseAry[indexPath.row].purchaseDescription
         return cell
+    }
+    
+    func DateFormat (date : Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = dateFormatter.string(from: Date())
+        let yourDate = dateFormatter.date(from: myString)
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        let myStringafd = dateFormatter.string(from: yourDate!)
+        return myStringafd
     }
     
     

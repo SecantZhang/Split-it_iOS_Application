@@ -14,6 +14,13 @@
 		C86182A620DA1F13001F4631 /* DetailPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182A520DA1F13001F4631 /* DetailPurchaseViewController.swift */; };
 		C86182A820DA1F24001F4631 /* DetailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182A720DA1F24001F4631 /* DetailUserViewController.swift */; };
 		C86182AB20DA2125001F4631 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182AA20DA2125001F4631 /* DetailViewController.swift */; };
+		C86182B420DB7413001F4631 /* DetailPurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182B220DB7413001F4631 /* DetailPurchaseTableViewCell.swift */; };
+		C86182B520DB7413001F4631 /* DetailPurchaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86182B320DB7413001F4631 /* DetailPurchaseTableViewCell.xib */; };
+		C86182BB20DC0407001F4631 /* JourneyCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182B920DC0407001F4631 /* JourneyCustomTableViewCell.swift */; };
+		C86182BC20DC0407001F4631 /* JourneyCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86182BA20DC0407001F4631 /* JourneyCustomTableViewCell.xib */; };
+		C86182C020DC2EC0001F4631 /* UserCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182BE20DC2EC0001F4631 /* UserCustomTableViewCell.swift */; };
+		C86182C120DC2EC0001F4631 /* UserCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C86182BF20DC2EC0001F4631 /* UserCustomTableViewCell.xib */; };
+		C86182C520DDCD2B001F4631 /* NewPurchaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182C320DDCD2B001F4631 /* NewPurchaseCollectionViewCell.swift */; };
 		C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3614120C9A0FC00DE6604 /* AppDelegate.swift */; };
 		C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */; };
 		C8A3614720C9A0FC00DE6604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3614520C9A0FC00DE6604 /* Main.storyboard */; };
@@ -40,6 +47,13 @@
 		C86182A520DA1F13001F4631 /* DetailPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPurchaseViewController.swift; sourceTree = "<group>"; };
 		C86182A720DA1F24001F4631 /* DetailUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserViewController.swift; sourceTree = "<group>"; };
 		C86182AA20DA2125001F4631 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C86182B220DB7413001F4631 /* DetailPurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPurchaseTableViewCell.swift; sourceTree = "<group>"; };
+		C86182B320DB7413001F4631 /* DetailPurchaseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPurchaseTableViewCell.xib; sourceTree = "<group>"; };
+		C86182B920DC0407001F4631 /* JourneyCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCustomTableViewCell.swift; sourceTree = "<group>"; };
+		C86182BA20DC0407001F4631 /* JourneyCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JourneyCustomTableViewCell.xib; sourceTree = "<group>"; };
+		C86182BE20DC2EC0001F4631 /* UserCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomTableViewCell.swift; sourceTree = "<group>"; };
+		C86182BF20DC2EC0001F4631 /* UserCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCustomTableViewCell.xib; sourceTree = "<group>"; };
+		C86182C320DDCD2B001F4631 /* NewPurchaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPurchaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		C8A3613E20C9A0FC00DE6604 /* Split-it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split-it.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A3614120C9A0FC00DE6604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +124,41 @@
 			path = DetailVC;
 			sourceTree = "<group>";
 		};
+		C86182AD20DB73B0001F4631 /* PurchaseCustomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				C86182B220DB7413001F4631 /* DetailPurchaseTableViewCell.swift */,
+				C86182B320DB7413001F4631 /* DetailPurchaseTableViewCell.xib */,
+			);
+			path = PurchaseCustomeCell;
+			sourceTree = "<group>";
+		};
+		C86182B820DC03E8001F4631 /* JourneyCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				C86182B920DC0407001F4631 /* JourneyCustomTableViewCell.swift */,
+				C86182BA20DC0407001F4631 /* JourneyCustomTableViewCell.xib */,
+			);
+			path = JourneyCustomCell;
+			sourceTree = "<group>";
+		};
+		C86182BD20DC2EA0001F4631 /* UserCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				C86182BE20DC2EC0001F4631 /* UserCustomTableViewCell.swift */,
+				C86182BF20DC2EC0001F4631 /* UserCustomTableViewCell.xib */,
+			);
+			path = UserCustomCell;
+			sourceTree = "<group>";
+		};
+		C86182C220DDCD0C001F4631 /* NewPurchaseCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C86182C320DDCD2B001F4631 /* NewPurchaseCollectionViewCell.swift */,
+			);
+			path = NewPurchaseCollectionCell;
+			sourceTree = "<group>";
+		};
 		C8A3613520C9A0FC00DE6604 = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +207,10 @@
 		C8A3615F20C9B15700DE6604 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C86182C220DDCD0C001F4631 /* NewPurchaseCollectionCell */,
+				C86182BD20DC2EA0001F4631 /* UserCustomCell */,
+				C86182B820DC03E8001F4631 /* JourneyCustomCell */,
+				C86182AD20DB73B0001F4631 /* PurchaseCustomeCell */,
 				C8A3614520C9A0FC00DE6604 /* Main.storyboard */,
 				C8A3614D20C9A0FD00DE6604 /* LaunchScreen.storyboard */,
 			);
@@ -234,7 +287,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8A3614F20C9A0FD00DE6604 /* LaunchScreen.storyboard in Resources */,
+				C86182C120DC2EC0001F4631 /* UserCustomTableViewCell.xib in Resources */,
+				C86182B520DB7413001F4631 /* DetailPurchaseTableViewCell.xib in Resources */,
 				C8A3614C20C9A0FD00DE6604 /* Assets.xcassets in Resources */,
+				C86182BC20DC0407001F4631 /* JourneyCustomTableViewCell.xib in Resources */,
 				C8A3614720C9A0FC00DE6604 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86182A320D9F85A001F4631 /* DetailTableViewController.swift in Sources */,
+				C86182C020DC2EC0001F4631 /* UserCustomTableViewCell.swift in Sources */,
 				C86182AB20DA2125001F4631 /* DetailViewController.swift in Sources */,
 				C86182A620DA1F13001F4631 /* DetailPurchaseViewController.swift in Sources */,
 				C8A3616A20CA493100DE6604 /* JourneyPeopleViewController.swift in Sources */,
@@ -293,13 +350,16 @@
 				C8A3614A20C9A0FC00DE6604 /* Split_it.xcdatamodeld in Sources */,
 				C8A3615B20C9AE2200DE6604 /* HistViewController.swift in Sources */,
 				C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */,
+				C86182C520DDCD2B001F4631 /* NewPurchaseCollectionViewCell.swift in Sources */,
 				C8A3615D20C9AE2E00DE6604 /* SettViewController.swift in Sources */,
 				C856C9AC20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift in Sources */,
+				C86182BB20DC0407001F4631 /* JourneyCustomTableViewCell.swift in Sources */,
 				C8FC6C1320D0A12F005D7FE6 /* HistTableViewController.swift in Sources */,
 				C86182A820DA1F24001F4631 /* DetailUserViewController.swift in Sources */,
 				C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */,
 				C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */,
 				C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */,
+				C86182B420DB7413001F4631 /* DetailPurchaseTableViewCell.swift in Sources */,
 				C8E3C52420D2312600AFA623 /* NewPurchaseViewController.swift in Sources */,
 				C861829E20D9A12E001F4631 /* JourneyTableViewController.swift in Sources */,
 			);
