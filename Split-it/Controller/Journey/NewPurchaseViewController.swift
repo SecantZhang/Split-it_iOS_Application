@@ -26,6 +26,8 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     var selectedGroup : Group?
     var groupUsers = [User]()
+    var selectedSharedUser = [User]()
+    var selectedSharedUserIndex = [Bool]()
     var sharedUserSelection : Int = -1
     var cellInitializationStatus : Bool = false
     
@@ -90,11 +92,22 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
         }
         newPurchase.purchaseDate = datePicker.date
         newPurchase.purchaseParentGroup = self.selectedGroup
+        initSelectedUserArray()
+        newPurchase.purchaseUser = NSSet(array: selectedSharedUser)
         
         do {
             try context.save()
         } catch {
             print("Error saving context in New Purchase: \(error)")
+        }
+    }
+    
+    // MARK: - Method for Initializing selectedSharedUser array.
+    func initSelectedUserArray () {
+        for index in 0...(groupUsers.count - 1) {
+            if selectedSharedUserIndex[index] == true {
+                selectedSharedUser.append(groupUsers[index])
+            }
         }
     }
     
@@ -105,6 +118,7 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
         
         do {
             groupUsers = try context.fetch(request)
+            selectedSharedUserIndex = [Bool](repeating: true, count: groupUsers.count)
         } catch {
             print("Error in fetching user data in purchase detail: \(error)")
         }
@@ -145,10 +159,12 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
         if currentCell.selectedIconImageView.isHidden == true {
             currentCell.selectedIconImageView.isHidden = false
             currentCell.isSelected = true
+            selectedSharedUserIndex[indexPath.item] = false
         }
         else {
             currentCell.selectedIconImageView.isHidden = true
             currentCell.isSelected = false
+            selectedSharedUserIndex[indexPath.item] = true
         }
     }
     
