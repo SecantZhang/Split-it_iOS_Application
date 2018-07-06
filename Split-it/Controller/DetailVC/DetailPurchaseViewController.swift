@@ -60,7 +60,7 @@ class DetailPurchaseViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "PurchaseCell", for: indexPath) as! DetailPurchaseTableViewCell
         cell.cellTitle.text = self.purchaseAry[indexPath.row].title
         cell.amountTextField.text = String(self.purchaseAry[indexPath.row].amount)
-        cell.dateTextField.text = DateFormat(date: self.purchaseAry[indexPath.row].purchaseDate!)
+        //cell.dateTextField.text = DateFormat(date: self.purchaseAry[indexPath.row].purchaseDate!)
         cell.descriptionLabel.text = self.purchaseAry[indexPath.row].purchaseDescription
         return cell
     }

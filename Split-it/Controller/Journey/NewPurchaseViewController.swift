@@ -90,7 +90,7 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
         if descriptionTextView.hasText == true {
             newPurchase.purchaseDescription = descriptionTextView.text!
         }
-        newPurchase.purchaseDate = datePicker.date
+        //newPurchase.purchaseDate = datePicker.date
         newPurchase.purchaseParentGroup = self.selectedGroup
         initSelectedUserArray()
         newPurchase.purchaseUser = NSSet(array: selectedSharedUser)

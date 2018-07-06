@@ -11,7 +11,7 @@
     <entity name="Purchase" representedClassName=".Purchase" syncable="YES" codeGenerationType="class">
         <attribute name="amount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="amountAfterSplit" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="purchaseDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="purchaseDate" attributeType="String" syncable="YES"/>
         <attribute name="purchaseDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="purchaseParentGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="group_purchase" inverseEntity="Group" syncable="YES"/>
