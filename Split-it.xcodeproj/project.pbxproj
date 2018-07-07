@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2C522D770235B33AE8A9D912 /* Pods_Split_it.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5176C6E64A65E996E4163F0 /* Pods_Split_it.framework */; };
+		C825745420F0495C00FCA331 /* GroupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825745320F0495C00FCA331 /* GroupData.swift */; };
+		C825745620F04AE900FCA331 /* PurchaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825745520F04AE900FCA331 /* PurchaseData.swift */; };
+		C825745820F04AF300FCA331 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C825745720F04AF300FCA331 /* UserData.swift */; };
 		C856C9AC20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C856C9AB20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift */; };
 		C861829E20D9A12E001F4631 /* JourneyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C861829D20D9A12E001F4631 /* JourneyTableViewController.swift */; };
 		C86182A320D9F85A001F4631 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86182A220D9F85A001F4631 /* DetailTableViewController.swift */; };
@@ -24,7 +27,6 @@
 		C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3614120C9A0FC00DE6604 /* AppDelegate.swift */; };
 		C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */; };
 		C8A3614720C9A0FC00DE6604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3614520C9A0FC00DE6604 /* Main.storyboard */; };
-		C8A3614A20C9A0FC00DE6604 /* Split_it.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8A3614820C9A0FC00DE6604 /* Split_it.xcdatamodeld */; };
 		C8A3614C20C9A0FD00DE6604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A3614B20C9A0FD00DE6604 /* Assets.xcassets */; };
 		C8A3614F20C9A0FD00DE6604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8A3614D20C9A0FD00DE6604 /* LaunchScreen.storyboard */; };
 		C8A3615B20C9AE2200DE6604 /* HistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A3615A20C9AE2200DE6604 /* HistViewController.swift */; };
@@ -41,6 +43,9 @@
 		22313F1E2C8D378F9159F971 /* Pods-Split-it.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split-it.release.xcconfig"; path = "Pods/Target Support Files/Pods-Split-it/Pods-Split-it.release.xcconfig"; sourceTree = "<group>"; };
 		9EF636208F8CF76911FE6BF7 /* Pods-Split-it.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Split-it.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Split-it/Pods-Split-it.debug.xcconfig"; sourceTree = "<group>"; };
 		A5176C6E64A65E996E4163F0 /* Pods_Split_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Split_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C825745320F0495C00FCA331 /* GroupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupData.swift; sourceTree = "<group>"; };
+		C825745520F04AE900FCA331 /* PurchaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseData.swift; sourceTree = "<group>"; };
+		C825745720F04AF300FCA331 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		C856C9AB20CBAA3E009B7CE1 /* AddPeoplePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPeoplePopupViewController.swift; sourceTree = "<group>"; };
 		C861829D20D9A12E001F4631 /* JourneyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyTableViewController.swift; sourceTree = "<group>"; };
 		C86182A220D9F85A001F4631 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +63,6 @@
 		C8A3614120C9A0FC00DE6604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8A3614320C9A0FC00DE6604 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C8A3614620C9A0FC00DE6604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C8A3614920C9A0FC00DE6604 /* Split_it.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Split_it.xcdatamodel; sourceTree = "<group>"; };
 		C8A3614B20C9A0FD00DE6604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8A3614E20C9A0FD00DE6604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8A3615020C9A0FD00DE6604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +103,16 @@
 				22313F1E2C8D378F9159F971 /* Pods-Split-it.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C825745920F04F5400FCA331 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C825745520F04AE900FCA331 /* PurchaseData.swift */,
+				C825745720F04AF300FCA331 /* UserData.swift */,
+				C825745320F0495C00FCA331 /* GroupData.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 		C86182A120D9F827001F4631 /* Journey */ = {
@@ -221,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				C8A3616B20CA523D00DE6604 /* PeopleCollectionViewCell.swift */,
-				C8A3614820C9A0FC00DE6604 /* Split_it.xcdatamodeld */,
+				C825745920F04F5400FCA331 /* DataModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -346,12 +360,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86182A320D9F85A001F4631 /* DetailTableViewController.swift in Sources */,
+				C825745420F0495C00FCA331 /* GroupData.swift in Sources */,
 				C86182C020DC2EC0001F4631 /* UserCustomTableViewCell.swift in Sources */,
 				C86182AB20DA2125001F4631 /* DetailViewController.swift in Sources */,
 				C86182A620DA1F13001F4631 /* DetailPurchaseViewController.swift in Sources */,
 				C8A3616A20CA493100DE6604 /* JourneyPeopleViewController.swift in Sources */,
 				C8E3C52020D2152400AFA623 /* PurchaseTableViewController.swift in Sources */,
-				C8A3614A20C9A0FC00DE6604 /* Split_it.xcdatamodeld in Sources */,
 				C8A3615B20C9AE2200DE6604 /* HistViewController.swift in Sources */,
 				C8A3616820CA2D9D00DE6604 /* NumOfPeopleViewController.swift in Sources */,
 				C86182C520DDCD2B001F4631 /* NewPurchaseCollectionViewCell.swift in Sources */,
@@ -360,7 +374,9 @@
 				C86182BB20DC0407001F4631 /* JourneyCustomTableViewCell.swift in Sources */,
 				C8FC6C1320D0A12F005D7FE6 /* HistTableViewController.swift in Sources */,
 				C86182A820DA1F24001F4631 /* DetailUserViewController.swift in Sources */,
+				C825745620F04AE900FCA331 /* PurchaseData.swift in Sources */,
 				C8A3616C20CA523D00DE6604 /* PeopleCollectionViewCell.swift in Sources */,
+				C825745820F04AF300FCA331 /* UserData.swift in Sources */,
 				C8A3614420C9A0FC00DE6604 /* HomeViewController.swift in Sources */,
 				C8A3614220C9A0FC00DE6604 /* AppDelegate.swift in Sources */,
 				C86182B420DB7413001F4631 /* DetailPurchaseTableViewCell.swift in Sources */,
@@ -567,19 +583,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C8A3614820C9A0FC00DE6604 /* Split_it.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C8A3614920C9A0FC00DE6604 /* Split_it.xcdatamodel */,
-			);
-			currentVersion = C8A3614920C9A0FC00DE6604 /* Split_it.xcdatamodel */;
-			path = Split_it.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C8A3613620C9A0FC00DE6604 /* Project object */;
 }

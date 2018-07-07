@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SVProgressHUD
+import RealmSwift
 
 class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
