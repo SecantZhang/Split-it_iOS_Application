@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var NewButton: UIBarButtonItem!
     @IBOutlet weak var Navigation: UINavigationItem!
     
-    var selectedGroup : Group?
+    var selectedGroup : GroupData?
     var groupName : String?
     
     override func viewDidLoad() {

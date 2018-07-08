@@ -11,7 +11,7 @@ import CoreData
 
 class JourneyTableViewController: UITableViewController {
     
-    var groups = [Group]()
+    var groups = [GroupData]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -29,13 +29,13 @@ class JourneyTableViewController: UITableViewController {
     }
     
     func loadGroupData () {
-        let request : NSFetchRequest<Group> = Group.fetchRequest()
-        
-        do {
-            try groups = context.fetch(request)
-        } catch {
-            print("Error loading groups \(error)")
-        }
+//        let request : NSFetchRequest<Group> = Group.fetchRequest()
+//
+//        do {
+//            try groups = context.fetch(request)
+//        } catch {
+//            print("Error loading groups \(error)")
+//        }
 
     }
     
@@ -77,7 +77,7 @@ class JourneyTableViewController: UITableViewController {
             let destinationVC = segue.destination as! DetailViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 destinationVC.selectedGroup = groups[indexPath.row]
-                destinationVC.groupName = groups[indexPath.row].groupName!
+                destinationVC.groupName = groups[indexPath.row].groupName
             }
         }
     }

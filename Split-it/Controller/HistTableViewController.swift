@@ -12,7 +12,7 @@ import CoreData
 class HistTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var userAry = [User]()
+    var userAry = [UserData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +44,12 @@ class HistTableViewController: UITableViewController {
     }
     
     func loadItems () {
-        let request : NSFetchRequest<User> = User.fetchRequest()
-        do {
-            userAry = try context.fetch(request)
-        } catch {
-            print("Error Fetching data from context \(error)")
-        }
+//        let request : NSFetchRequest<User> = User.fetchRequest()
+//        do {
+//            userAry = try context.fetch(request)
+//        } catch {
+//            print("Error Fetching data from context \(error)")
+//        }
         tableView.reloadData()
     }
 

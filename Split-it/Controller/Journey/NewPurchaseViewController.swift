@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 import SVProgressHUD
 import RealmSwift
 
@@ -24,10 +23,11 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var sharedWithCollectionView: UICollectionView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let realm = try! Realm()
     
-    var selectedGroup : Group?
-    var groupUsers = [User]()
-    var selectedSharedUser = [User]()
+    var selectedGroup : GroupData?
+    var groupUsers = [UserData]()
+    var selectedSharedUser = [UserData]()
     var selectedSharedUserIndex = [Bool]()
     var sharedUserSelection : Int = -1
     var cellInitializationStatus : Bool = false
@@ -84,20 +84,23 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     func saveData () {
-        let newPurchase = Purchase(context: context)
-        
+        let newPurchase = PurchaseData()
+
         newPurchase.amount = Double(amountPaidTextField.text!)!
         newPurchase.title = titleTextField.text!
         if descriptionTextView.hasText == true {
             newPurchase.purchaseDescription = descriptionTextView.text!
         }
         //newPurchase.purchaseDate = datePicker.date
-        newPurchase.purchaseParentGroup = self.selectedGroup
+        
+        // TODO: - Declaring the parent group and users.
+        
         initSelectedUserArray()
-        newPurchase.purchaseUser = NSSet(array: selectedSharedUser)
         
         do {
-            try context.save()
+            try realm.write {
+                realm.add(newPurchase)
+            }
         } catch {
             print("Error saving context in New Purchase: \(error)")
         }
@@ -113,16 +116,15 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
     }
     
     // MARK: - Fetch Users for collectionview.
-    func loadUserData (with request : NSFetchRequest<User> = User.fetchRequest()) {
-        let predicate = NSPredicate(format: "userParentGroup.groupName MATCHES %@", selectedGroup!.groupName!)
-        request.predicate = predicate
+    func loadUserData (/* with request : NSFetchRequest<User> = User.fetchRequest()*/) {
+        // TODO: - Fetching the userdata.
         
-        do {
-            groupUsers = try context.fetch(request)
-            selectedSharedUserIndex = [Bool](repeating: true, count: groupUsers.count)
-        } catch {
-            print("Error in fetching user data in purchase detail: \(error)")
-        }
+//        do {
+//            groupUsers = try context.fetch(request)
+//            selectedSharedUserIndex = [Bool](repeating: true, count: groupUsers.count)
+//        } catch {
+//            print("Error in fetching user data in purchase detail: \(error)")
+//        }
     }
     
     // MARK: - UICollectionView Protocol methods.
@@ -132,8 +134,8 @@ class NewPurchaseViewController: UIViewController, UITextFieldDelegate, UITextVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewPurchaseGroupUserCell", for: indexPath) as! NewPurchaseCollectionViewCell
-        cell.NameLabel.text = groupUsers[indexPath.item].name
-        cell.initialNameLabel.text = String((groupUsers[indexPath.item].name?.prefix(1))!.uppercased())
+        cell.NameLabel.text = groupUsers[indexPath.item].userName
+        cell.initialNameLabel.text = String((groupUsers[indexPath.item].userName.prefix(1)).uppercased())
         return cell
     }
     

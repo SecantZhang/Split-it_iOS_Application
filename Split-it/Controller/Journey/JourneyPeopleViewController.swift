@@ -29,7 +29,7 @@ class JourneyPeopleViewController: UIViewController, UICollectionViewDataSource,
     var peopleCount : Int = 0
     var clickedCellItem : Int = -1
     var name : String?
-    var currentGroup : Group?
+    var currentGroup : GroupData?
 
     @IBOutlet weak var viewContainer: UIView!
     @IBOutlet weak var nextButton: UIButton!

@@ -7,13 +7,15 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 protocol PopupPassingDataProtocol {
     func dataReceived(enteredName : String)
 }
 
 class AddPeoplePopupViewController: UIViewController {
+    
+    let realm = try! Realm()
 
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
@@ -21,7 +23,7 @@ class AddPeoplePopupViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     
     var dataSendDelegate : PopupPassingDataProtocol?
-    var currentGroup : Group?
+    var currentGroup : GroupData?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -54,14 +56,15 @@ class AddPeoplePopupViewController: UIViewController {
     
     func saveUserData () {
         
-        let newUser = User(context: context)
+        let newUser = UserData()
         
-        newUser.name = nameEnterTextfield.text!
-        newUser.creatDate = getDate()
-        newUser.userParentGroup = self.currentGroup
+        newUser.userName = nameEnterTextfield.text!
+        newUser.userCreateDate = NSDate()
         
         do {
-            try context.save()
+            try realm.write {
+                realm.add(newUser)
+            }
         } catch {
             print("Error saving context \(error)")
         }

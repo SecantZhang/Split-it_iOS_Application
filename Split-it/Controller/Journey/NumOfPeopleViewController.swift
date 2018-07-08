@@ -7,16 +7,19 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+    
+    // Realm configuration
+    let realm = try! Realm()
 
     // picker data array
     var pickerData : [String] = [String]()
     var selection : Int = 1
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var group = [Group]()
-    var currentGroup : Group?
+    var group = [GroupData]()
+    var currentGroup : GroupData?
     
     @IBOutlet weak var viewPiece: UIView!
     @IBOutlet weak var numberPicker: UIPickerView!
@@ -58,17 +61,19 @@ class NumOfPeopleViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let enteredGroupName = groupNameTextField.text!
         let numberOfPeople = selection
         
-        let newGroup = Group(context: context)
-        newGroup.groupNumOfPeop = Int64(numberOfPeople)
+        let newGroup = GroupData()
+        newGroup.groupNumOfUser = numberOfPeople
         newGroup.groupName = enteredGroupName
-        newGroup.onGoing = true
-        newGroup.groupCreatDate = Date()
+        newGroup.groupStatus = true
+        newGroup.groupCreateDate = NSDate()
         
         self.group.append(newGroup)
         currentGroup = newGroup
         
         do {
-            try context.save()
+            try realm.write {
+                realm.add(newGroup)
+            }
         } catch {
             print("Error in saving group \(error)")
         }

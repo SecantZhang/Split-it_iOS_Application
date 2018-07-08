@@ -12,8 +12,8 @@ import CoreData
 class DetailTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var users = [User]()
-    var selectedGroup : Group? {
+    var users = [UserData]()
+    var selectedGroup : GroupData? {
         didSet {
             loadUserData()
         }
@@ -31,15 +31,15 @@ class DetailTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func loadUserData (with request : NSFetchRequest<User> = User.fetchRequest()) {
-        let predicate = NSPredicate(format: "userParentGroup.groupName MATCHES %@", selectedGroup!.groupName!)
-        request.predicate = predicate
-        
-        do {
-            users = try context.fetch(request)
-        } catch {
-            print("Error fetching user data from context: \(error)")
-        }
+    func loadUserData (/* with request : NSFetchRequest<User> = User.fetchRequest()*/) {
+//        let predicate = NSPredicate(format: "userParentGroup.groupName MATCHES %@", selectedGroup!.groupName!)
+//        request.predicate = predicate
+//
+//        do {
+//            users = try context.fetch(request)
+//        } catch {
+//            print("Error fetching user data from context: \(error)")
+//        }
         
         tableView.reloadData()
     }
@@ -51,7 +51,7 @@ class DetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
-        cell.textLabel?.text = self.users[indexPath.row].name
+        cell.textLabel?.text = self.users[indexPath.row].userName
         return cell
     }
 }

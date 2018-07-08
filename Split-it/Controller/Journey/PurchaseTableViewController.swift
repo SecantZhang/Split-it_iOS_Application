@@ -12,7 +12,7 @@ import CoreData
 class PurchaseTableViewController: UITableViewController {
     
     // Create a Array of group objects.
-    var groups = [Group]()
+    var groups = [GroupData]()
     // Create Context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 

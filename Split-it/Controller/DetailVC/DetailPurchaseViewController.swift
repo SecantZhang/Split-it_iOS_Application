@@ -12,8 +12,8 @@ import CoreData
 class DetailPurchaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var purchaseAry = [Purchase]()
-    var selectedGroup : Group?
+    var purchaseAry = [PurchaseData]()
+    var selectedGroup : GroupData?
 
     @IBOutlet weak var PurchaseTableView: UITableView!
     
@@ -35,12 +35,12 @@ class DetailPurchaseViewController: UIViewController, UITableViewDelegate, UITab
         super.didReceiveMemoryWarning()
     }
     
-    func loadPurchaseData (with request : NSFetchRequest<Purchase> = Purchase.fetchRequest()) {
-        let predicate = NSPredicate(format: "purchaseParentGroup.groupName MATCHES %@", selectedGroup!.groupName!)
-        request.predicate = predicate
+    func loadPurchaseData (/* with request : NSFetchRequest<Purchase> = Purchase.fetchRequest()*/) {
+//        let predicate = NSPredicate(format: "purchaseParentGroup.groupName MATCHES %@", selectedGroup!.groupName!)
+//        request.predicate = predicate
         
         do {
-            purchaseAry = try context.fetch(request)
+            // purchaseAry = try context.fetch(request)
         } catch {
             print("Error fetching purchase data \(error)")
         }
